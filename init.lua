@@ -244,6 +244,7 @@ local function on_drown(player)
 			local new_hp = math.max(0, (player:get_hp() - DROWNING_DAMAGE))
 
 			player:set_hp(new_hp)
+			minetest.chat_send_player(name, "You are drowning.")
 			play_drown_sound(player, "drowning_gurp", 16)
 			schedule_next_damage(name)
 		else
